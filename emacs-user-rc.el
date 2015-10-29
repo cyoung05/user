@@ -87,7 +87,7 @@
 ;-------------------------
 
 (require 'escreen)
-(escreen-install)
+(escreen-install) ;; need to move this to a :after action in el-get
 
 (add-hook 'escreen-goto-screen-hook
           'escreen-enable-number-mode-if-more-than-one-screen)
