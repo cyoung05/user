@@ -212,6 +212,18 @@ If `dired-ps-print-buffer-with-faces' is non-nil, use
   (rename-buffer (concat "GREP: " pattern))
 )
 
+;;;; TAKEN FROM: shadowfile.el
+;;; LCD Archive Entry:
+;;;  shadowfile|Boris Goldowsky|boris@cs.rochester.edu|
+;;;  Helps you keep identical copies of files in multiple places.|
+;;;  $Date: 93/06/30 15:54:41 $ |$Revision: 2.0 $||
+(defun shadow-join (strings sep sur)
+  "Concatenate elements of the list of STRINGS with SEP between each, each string surrounded by SUR."
+  (cond ((null strings) "")
+	((null (cdr strings)) (concat sur (car strings) sur))
+	((concat (concat sur (car strings) sur) " " (shadow-join (cdr strings) sep sur)))
+))
+
 (defun dired-grep-source (pattern)
   "Run grep in the current directory the point is in when using dired only on .C, .CPP, .H, .ASM, .AS[ACMP]X, *.CS, *.PRC, *.SQL"
   (interactive "MGrep source files for (regexp): ")
