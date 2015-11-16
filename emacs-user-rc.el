@@ -51,7 +51,9 @@
 (display-time-mode t)
 
 (color-theme-initialize)
-(color-theme-dark-laptop)
+(require 'grandshell-theme)
+;;(color-theme-dark-laptop)
+
 
 (global-set-key [C-mouse-4] 'text-scale-increase)
 (global-set-key [C-mouse-5] 'text-scale-decrease)
