@@ -3,7 +3,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (tango-dark)))
+;; '(custom-enabled-themes (quote (tango-dark)))
  '(dired-listing-switches "-alh")
  '(inhibit-startup-screen t))
 (custom-set-faces
@@ -34,7 +34,7 @@
 ;; set local recipes, el-get-sources should only accept PLIST element
 (setq el-get-sources
  '(
-   (:name magit				; git meet emacs, and a binding
+   (:name magit
 	  :package-version '(magit . "2.1.0")
 	  :after (progn
 		   (global-set-key (kbd "C-x C-z") 'magit-status)))
@@ -62,7 +62,9 @@
    hl-line+
    col-highlight
    crosshairs
-;   magit
+
+;; magit source does not support emacs 24.3
+;;   magit
 ))
 
 
