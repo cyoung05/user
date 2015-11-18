@@ -76,6 +76,7 @@
   ;; this function sets `overriding-local-map' but only if it is
   ;; currently `nil'.
   (unless overriding-local-map
+    (message "Activated!")
     (visual-mark-ring-show)
     (setq overriding-local-map visual-mark-ring-overriding-map)))
 
@@ -93,10 +94,13 @@
   (visual-mark-ring-hide)
 
   (let (pos-index-pairs overlay)
+    (message (concat "pos-index-pairs: " (prin1-to-string pos-index-pairs)))
+    (message (concat "mark-ring: " (prin1-to-string mark-ring)))
     (let ((markers (cons (mark-marker) mark-ring))
           (marker-index 0)
           (count -1)
           marker)
+      (message (concat "markers: " (prin1-to-string markers)))
       ;; iterate through this buffer's mark-ring to find all positions
       ;; that need to be highlighted
       (while (and markers (< (setq count (1+ count)) visual-mark-mode-num-markers))
@@ -132,7 +136,12 @@
 (defun visual-mark-ring-hide ()
   "Remove the visualizations of the mark-ring entries from the
 current buffer."
+  (interactive)
   (let (overlay)
+    (message (concat "Overlay: " (prin1-to-string overlay)))
+    (message (concat "visual-mark-ring-overlays: " (prin1-to-string visual-mark-ring-overlays)))
     (while visual-mark-ring-overlays
       (delete-overlay (car visual-mark-ring-overlays))
-      (setq visual-mark-ring-overlays (cdr visual-mark-ring-overlays)))))
+      (setq visual-mark-ring-overlays (cdr visual-mark-ring-overlays)))
+    (message (concat "visual-mark-ring-overlays: " (prin1-to-string visual-mark-ring-overlays)))
+))
