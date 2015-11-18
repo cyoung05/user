@@ -27,14 +27,6 @@
 
 ;;; Code:
 
-(defun elisp-set-hjkl-keys ()
-  "Take a mode key map and add hjkl VI-like keys to it"
-  (interactive)
-  (local-set-key "j" 'next-line)
-  (local-set-key "k" 'previous-line)
-  (local-set-key "h" 'backward-char)
-  (local-set-key "l" 'forward-char))
-
 (tool-bar-mode -1)
 (show-paren-mode t)
 (transient-mark-mode -1)
@@ -50,16 +42,29 @@
 (setq display-time-format "%l:%M")
 (setq display-time-day-and-date t)
 (display-time-mode t)
+(setq x-select-enable-clipboard t)
+(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
 (color-theme-initialize)
 (require 'grandshell-theme)
 ;;(color-theme-dark-laptop)
 
+(require 'tramp)
+
+;; Make things a little more readable
+(require 'hl-line)
+(set-face-background hl-line-face "gray13")
+
+(defun elisp-set-hjkl-keys ()
+  "Take a mode key map and add hjkl VI-like keys to it"
+  (interactive)
+  (local-set-key "j" 'next-line)
+  (local-set-key "k" 'previous-line)
+  (local-set-key "h" 'backward-char)
+  (local-set-key "l" 'forward-char))
 
 (global-set-key [C-mouse-4] 'text-scale-increase)
 (global-set-key [C-mouse-5] 'text-scale-decrease)
-
-(require 'tramp)
 
 ;; http://stackoverflow.com/questions/19054228/emacs-disable-theme-background-color-in-terminal
 (defun on-frame-open (&optional frame)
@@ -68,10 +73,6 @@
     (set-face-background 'default "unspecified-bg" frame)))
 
 (add-hook 'after-make-frame-functions 'on-frame-open)
-
-;; Make things a little more readable
-(require 'hl-line)
-(set-face-background hl-line-face "gray13")
 
 ;; 2013-09-03:
 ;; http://stackoverflow.com/questions/3216081/integrate-emacs-copy-paste-with-system-copy-paste
