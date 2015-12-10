@@ -142,7 +142,7 @@
 ;-------------------------
 (add-hook 'view-mode-hook
 	  (lambda ()
-	    (elisp-set-hjkl-keys)
+;	    (elisp-set-hjkl-keys)
 	    (define-key view-mode-map [backspace] 'backward-char)))
 
 
@@ -162,8 +162,14 @@
 ;-------------------------
 ; custom mode stuff
 ;-------------------------
+;;;; 2015-11-24: WTF was this stuff? Disabled.
+;(add-hook 'custom-mode-hook 'elisp-set-hjkl-keys)
 
-(add-hook 'custom-mode-hook 'elisp-set-hjkl-keys)
+
+;-------------------------
+; tar mode stuff
+;-------------------------
+
 (add-hook 'tar-mode-hook 'elisp-set-hjkl-keys)
 
 ;-------------------------
