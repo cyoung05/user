@@ -265,7 +265,8 @@ If `dired-ps-print-buffer-with-faces' is non-nil, use
 (add-hook 'dired-mode-hook
 	  (lambda ()
 	    (local-set-key "A" 'dired-grep-marked-files)
-	    (local-set-key "E" 'dired-grep-source)))
+	    (local-set-key "E" 'dired-grep-source)
+	    (local-set-key "F" 'dired-grep)))
 
 
 ;-------------------------
