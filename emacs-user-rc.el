@@ -473,8 +473,14 @@ If `dired-ps-print-buffer-with-faces' is non-nil, use
 ;; Created for USM work PC with ~/log pointing to the directory where daylogs
 ;; are stored.
 ;; Updated for USM 2015
+;(fset 'do-startup
+;   [?\C-\\ ?c ?\C-\\ ?c ?\C-\\ ?c ?\C-\\ ?c ?\C-\\ ?c ?\C-\\ ?c ?\C-\\ ?c ?\C-\\ ?c ?\C-x ?d ?l ?o ?g tab ?2 ?0 ?1 ?5 return return ?\C-\\ ?1])
+
+;; Created for USM work PC with ~/log pointing to the directory where daylogs
+;; are stored.
+;; Updated for USM 2016
 (fset 'do-startup
-   [?\C-\\ ?c ?\C-\\ ?c ?\C-\\ ?c ?\C-\\ ?c ?\C-\\ ?c ?\C-\\ ?c ?\C-\\ ?c ?\C-\\ ?c ?\C-x ?d ?l ?o ?g tab ?2 ?0 ?1 ?5 return return ?\C-\\ ?1])
+   [?\C-\\ ?c ?\C-\\ ?c ?\C-\\ ?c ?\C-\\ ?c ?\C-\\ ?c ?\C-\\ ?c ?\C-\\ ?c ?\C-\\ ?c ?\C-x ?d ?l ?o ?g tab ?2 ?0 ?1 ?6 return return ?\C-\\ ?1])
 
 
 ;; Created for Ultravac 2011 in combination with terminus share
