@@ -64,7 +64,7 @@
    crosshairs
 
 ;; magit source does not support emacs 24.3
-;;   magit
+;  magit
 ))
 
 
