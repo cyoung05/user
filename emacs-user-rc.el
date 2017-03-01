@@ -44,6 +44,7 @@
 (display-time-mode t)
 (setq x-select-enable-clipboard t)
 (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+(setq confirm-kill-emacs 'yes-or-no-p)
 
 (color-theme-initialize)
 (require 'grandshell-theme)
