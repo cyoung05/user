@@ -45,6 +45,7 @@
 (setq x-select-enable-clipboard t)
 (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 (setq confirm-kill-emacs 'yes-or-no-p)
+(global-unset-key (kbd "C-x C-n"))
 
 (color-theme-initialize)
 (require 'grandshell-theme)
