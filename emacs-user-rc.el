@@ -470,7 +470,7 @@ If `dired-ps-print-buffer-with-faces' is non-nil, use
 ;-------------------------
 (setenv "GIT_SSL_NO_VERIFY" "true")
 (setenv "SSH_ASKPASS" "ssh-askpass")
-(autoload 'magit-status "magit" nil t)
+;(autoload 'magit-status "magit" nil t)
 
 ;; Created for USM work PC with ~/log pointing to the directory where daylogs
 ;; are stored.

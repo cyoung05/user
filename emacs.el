@@ -1,9 +1,8 @@
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(package-initialize)
+;(package-initialize)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -39,15 +38,15 @@
 ;; el-get installer.
 
 ;; set local recipes, el-get-sources should only accept PLIST element
-(setq el-get-sources
- '(
-   (:name magit
-	  :package-version '(magit . "2.1.0")
-	  :after (progn
-		   (global-set-key (kbd "C-x C-z") 'magit-status)))
-   ;;()
-   )
-)
+;(setq el-get-sources
+; '(
+;   (:name magit
+;	  :package-version '(magit . "2.1.0")
+;	  :after (progn
+;		   (global-set-key (kbd "C-x C-z") 'magit-status)))
+;   ;;()
+;   )
+;)
 
 ;; now set our own packages
 (setq
@@ -72,8 +71,6 @@
    docker
    docker-tramp
    dockerfile-mode
-;; magit source does not support emacs 24.3
-;  magit
 ))
 
 
@@ -85,6 +82,7 @@
 
 ;; install new packages and init already installed packages
 (el-get 'sync my:el-get-packages)
+
 
 (require 'emacs-user-rc)
 
